@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연구실 탈출</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <!-- 원본 이미지를 배경으로 사용합니다. -->
+        <img src="bg2.jpg" alt="연구실 배경" class="background-image">
+        
+        <!-- 클릭 가능한 영역 (Hotspots) -->
+        <div class="hotspot" id="computer-hotspot" title="컴퓨터"></div>
+        <div class="hotspot" id="microscope-hotspot" title="현미경"></div>
+        <div class="hotspot" id="paper-hotspot" title="실험종이"></div>
+        <div class="hotspot" id="flask-hotspot" title="둥근 플라스크"></div>
+        <div class="hotspot" id="door-hotspot" title="문"></div>
+    </div>
+
+    <!-- 퀴즈 및 탈출을 위한 모달창들 -->
+
+    <!-- 컴퓨터 모달 -->
+    <div id="computer-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>오래된 컴퓨터</h2>
+            <p>컴퓨터 화면에 문제가 나타났다.</p>
+            <p><b>문제:</b> 이 컴퓨터는 생김새로 보아 아주 오래된 것 같다. 이런 구형 컴퓨터는 보통 몇 비트(bit) 프로세서를 사용했을까? (힌트: 닌텐도 패미컴, 재믹스 같은 고전 게임기)</p>
+            <input type="text" id="computer-answer" placeholder="숫자만 입력">
+            <button id="computer-submit">확인</button>
+            <p id="computer-result" class="result-text"></p>
+        </div>
+    </div>
+
+    <!-- 현미경 모달 -->
+    <div id="microscope-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>현미경</h2>
+            <p>현미경을 조작해보자.</p>
+            <p><b>문제:</b> 현미경으로 무언가를 관찰할 때, 대략적인 초점을 맞추기 위해 가장 먼저 돌려야 하는 '조동나사'는 보통 몇 개일까?</p>
+            <input type="text" id="microscope-answer" placeholder="숫자만 입력">
+            <button id="microscope-submit">확인</button>
+            <p id="microscope-result" class="result-text"></p>
+        </div>
+    </div>
+
+    <!-- 실험종이 모달 -->
+    <div id="paper-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>실험 노트</h2>
+            <p>어지럽게 널린 종이들 사이에 의미있는 내용이 적힌 쪽지가 있다.</p>
+            <p><b>문제:</b> "1, 1, 2, 3, ?" 다음으로 올 숫자는 무엇일까? (피보나치 수열)</p>
+            <input type="text" id="paper-answer" placeholder="숫자만 입력">
+            <button id="paper-submit">확인</button>
+            <p id="paper-result" class="result-text"></p>
+        </div>
+    </div>
+
+    <!-- 플라스크 모달 -->
+    <div id="flask-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>둥근 플라스크</h2>
+            <p>플라스크와 주변을 자세히 살펴본다.</p>
+            <p><b>문제:</b> 둥근 플라스크는 가열 장치 위에 놓여 있지만, 현재는 작동하지 않는 것 같다. 플라스크를 데우고 있는 불꽃의 개수는 몇 개일까?</p>
+            <input type="text" id="flask-answer" placeholder="숫자만 입력">
+            <button id="flask-submit">확인</button>
+            <p id="flask-result" class="result-text"></p>
+        </div>
+    </div>
+    
+    <!-- 문 모달 -->
+    <div id="door-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>철문</h2>
+            <p>이 문을 열고 탈출해야 한다. 힌트들을 조합하여 4자리 비밀번호를 입력하라.</p>
+            <input type="text" id="door-password" placeholder="비밀번호 4자리" maxlength="4">
+            <button id="door-submit">열기</button>
+            <p id="door-result" class="result-text"></p>
+        </div>
+    </div>
+
+    <!-- 성공 모달 -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <h2>탈출 성공!</h2>
+            <p>철컥, 소리와 함께 문이 열렸다.</p>
+            <p>축하합니다! 연구실을 탈출했습니다.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

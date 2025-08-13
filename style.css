@@ -1,0 +1,130 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hotspot {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.hotspot:hover {
+    background-color: rgba(255, 255, 0, 0.3);
+}
+
+/* 개별 Hotspot 위치 설정 */
+#computer-hotspot { top: 41%; left: 68%; width: 28%; height: 42%; }
+#microscope-hotspot { top: 48%; left: 23%; width: 16%; height: 38%; }
+#paper-hotspot { top: 65%; left: 25%; width: 50%; height: 25%; }
+#flask-hotspot { top: 43%; left: 1%; width: 20%; height: 40%; }
+#door-hotspot { top: 15%; left: 39%; width: 22%; height: 70%; }
+
+
+/* 모달 스타일 */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation: slideIn 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.modal-content p {
+    line-height: 1.6;
+}
+
+.modal-content input[type="text"] {
+    width: 120px;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content button {
+    padding: 9px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.result-text {
+    margin-top: 15px;
+    font-weight: bold;
+    min-height: 20px;
+}
